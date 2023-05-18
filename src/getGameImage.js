@@ -9,6 +9,17 @@ const getGameImage = () => {
     gameField.appendChild(gameImage);
     gameImage.appendChild(targetGrid);
 
+    for (let i = 0; i < 20; i++) {
+        for (let j = 0; j < 20; j++) {
+            let targetSquare = document.createElement("div");
+            targetSquare.classList.add("targetSquare");
+            targetSquare.setAttribute("id", `${[i, j]}`);
+            targetSquare.addEventListener('click', () => {
+                console.log(targetSquare.id)
+            });
+            targetGrid.appendChild(targetSquare);
+        }
+    }
 }
 
 export { getGameImage };

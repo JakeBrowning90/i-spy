@@ -51,10 +51,17 @@ body {
 #targetGrid {
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 255, 255, 0.116);
+    /* background-color: rgba(0, 255, 255, 0.116); */
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(20, 1fr);
+}
+
+.targetSquare {
+    border: 1px black dotted;
+}
+.targetSquare:hover {
+    background-color: rgba(0, 255, 255, 0.449); 
 }
 
 .scoreScreenContent {
