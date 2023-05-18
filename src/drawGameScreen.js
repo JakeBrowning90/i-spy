@@ -1,5 +1,6 @@
 import { clearContent } from "./clearContent";
 import { drawStartScreen } from "./drawStartScreen";
+import { getGameImage } from "./getGameImage";
 
 const drawGameScreen = () => {
     const content = document.querySelector('#content');
@@ -14,8 +15,14 @@ const drawGameScreen = () => {
         drawStartScreen();
     });
 
+    const gameField = document.createElement('div');
+    gameField.setAttribute("id", "gameField");
+
     content.appendChild(gameScreenContent);
     gameScreenContent.appendChild(homeScreenButton);
+    gameScreenContent.appendChild(gameField);
+
+    getGameImage();
 }
 
 export { drawGameScreen };

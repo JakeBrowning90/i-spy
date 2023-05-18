@@ -33,6 +33,30 @@ body {
     background-color: rgb(160, 255, 160);
 }
 
+#gameField {
+    height: 70vh;
+    width: 70vh;
+    background-color: whitesmoke;
+}
+
+#gameImage {
+    background-image: url('./img/simpsonFamily.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    /* background-color: grey; */
+}
+
+#targetGrid {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 255, 255, 0.116);
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+}
+
 .scoreScreenContent {
     background-color: rgb(240, 255, 80);
 }
