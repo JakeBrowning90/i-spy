@@ -55,6 +55,21 @@ body {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(20, 1fr);
+    z-index: 0;
+}
+
+#characterPicker {
+    height: 25%;
+    width: 25%;
+    background-color: orange;
+    border: solid black 2px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
 }
 
 .targetSquare {

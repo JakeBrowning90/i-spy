@@ -1,3 +1,6 @@
+import { drawCharacterPicker } from "./drawCharacterPicker";
+import { getName } from "./gridNames";
+
 const getGameImage = () => {
     const gameField = document.querySelector('#gameField');
     const gameImage = document.createElement('div');
@@ -15,7 +18,9 @@ const getGameImage = () => {
             targetSquare.classList.add("targetSquare");
             targetSquare.setAttribute("id", `${[i, j]}`);
             targetSquare.addEventListener('click', () => {
-                console.log(targetSquare.id)
+                // console.log(targetSquare.id)
+                //getName(targetSquare.id)
+                drawCharacterPicker();
             });
             targetGrid.appendChild(targetSquare);
         }
