@@ -1,3 +1,13 @@
+const searchList = [
+    "Homer",
+    "Marge",
+    "Bart",
+    "Lisa",
+    "Maggie",
+    "Santa's Little Helper",
+    "Snowball II",
+]
+
 const gridNames = [
     {id: "3,9", face: "Homer"},
     {id: "3,10", face: "Homer"},

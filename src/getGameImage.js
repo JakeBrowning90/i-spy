@@ -1,4 +1,4 @@
-import { drawCharacterPicker } from "./drawCharacterPicker";
+import { characterPickerCheck, drawCharacterPicker, removeCharacterPicker } from "./characterPickerController";
 import { getName } from "./gridNames";
 
 const getGameImage = () => {
@@ -18,9 +18,9 @@ const getGameImage = () => {
             targetSquare.classList.add("targetSquare");
             targetSquare.setAttribute("id", `${[i, j]}`);
             targetSquare.addEventListener('click', () => {
-                // console.log(targetSquare.id)
-                //getName(targetSquare.id)
-                drawCharacterPicker();
+                // getName(targetSquare.id)
+                // Draw characterPicker if none, remove if already present
+                characterPickerCheck(targetSquare.id);
             });
             targetGrid.appendChild(targetSquare);
         }
