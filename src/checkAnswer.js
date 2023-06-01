@@ -1,5 +1,5 @@
 const answerKey = [
-  {name: "Homer", coords: ["5,9"]},
+  {name: "Homer", coords: ["5,9", "5,10"]},
   {name: "Marge", coords: ['6,6']},
   {name: "Bart", coords: ['13,2']},
   {name: "Lisa", coords: ['12,13']},

@@ -1,4 +1,5 @@
 import { checkAnswer } from "./checkAnswer";
+import { removeMarker } from "./tileMarkerController";
 
 const characterList = [
     "Homer",
@@ -10,14 +11,14 @@ const characterList = [
     "Snowball II"
 ];
 
-const characterPickerCheck = (targetSquare) => {
-    const characterPicker = document.querySelector('#characterPicker');
-    if (characterPicker != null) {
-        removeCharacterPicker()
-    } else {
-        drawCharacterPicker(targetSquare)
-    }
-}
+// const characterPickerCheck = (targetSquare) => {
+//     const characterPicker = document.querySelector('#characterPicker');
+//     if (characterPicker != null) {
+//         removeCharacterPicker()
+//     } else {
+//         drawCharacterPicker(targetSquare)
+//     }
+// }
 
 const drawCharacterPicker = (targetSquare) => {
     const gameScreenContent = document.querySelector('.gameScreenContent');
@@ -41,6 +42,7 @@ const drawCharacterPicker = (targetSquare) => {
         // TODO: function to check if submitted answer is correct
         checkAnswer(dropList.value, targetSquare)
         removeCharacterPicker();
+        removeMarker();
     });
 
 
@@ -56,5 +58,5 @@ const removeCharacterPicker = () => {
     gameScreenContent.removeChild(characterPicker);
 }
 
-export { characterPickerCheck, drawCharacterPicker, removeCharacterPicker };
+export { drawCharacterPicker, removeCharacterPicker };
 
