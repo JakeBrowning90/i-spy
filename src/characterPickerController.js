@@ -1,3 +1,5 @@
+import { checkAnswer } from "./checkAnswer";
+
 const characterList = [
     "Homer",
     "Marge",
@@ -21,7 +23,7 @@ const drawCharacterPicker = (targetSquare) => {
     const gameScreenContent = document.querySelector('.gameScreenContent');
     const characterPicker = document.createElement('div');
     characterPicker.setAttribute("id", "characterPicker");
-
+    characterPicker.textContent = "Who is this?";
     const dropList = document.createElement('select');
     for (var i = 0; i < characterList.length; i++) {
         let character = characterList[i];
@@ -34,7 +36,10 @@ const drawCharacterPicker = (targetSquare) => {
     const checkButton = document.createElement('button');
     checkButton.textContent = "Check!";
     checkButton.addEventListener('click', () => {
-        console.log(dropList.value, targetSquare)
+        // Test passing clicked square and character name from drop menu
+        // console.log(dropList.value, targetSquare)
+        // TODO: function to check if submitted answer is correct
+        checkAnswer(dropList.value, targetSquare)
         removeCharacterPicker();
     });
 
