@@ -1,15 +1,15 @@
-import { checkAnswer } from "./checkAnswer";
+import { checkAnswer, answerKey } from "./checkAnswer";
 import { removeMarker } from "./tileMarkerController";
 
-const characterList = [
-    "Homer",
-    "Marge",
-    "Bart",
-    "Lisa",
-    "Maggie",
-    "Santa's Little Helper",
-    "Snowball II"
-];
+// const characterList = [
+//     "Homer",
+//     "Marge",
+//     "Bart",
+//     "Lisa",
+//     "Maggie",
+//     "Santa's Little Helper",
+//     "Snowball II"
+// ];
 
 // const characterPickerCheck = (targetSquare) => {
 //     const characterPicker = document.querySelector('#characterPicker');
@@ -26,12 +26,14 @@ const drawCharacterPicker = (targetSquare) => {
     characterPicker.setAttribute("id", "characterPicker");
     characterPicker.textContent = "Who is this?";
     const dropList = document.createElement('select');
-    for (var i = 0; i < characterList.length; i++) {
-        let character = characterList[i];
-        let option = document.createElement("option");
-        option.textContent = character;
-        option.setAttribute('value', character);
-        dropList.appendChild(option);
+    for (var i = 0; i < answerKey.length; i++) {
+        let character = answerKey[i];
+        if (character.found == false) {
+            let option = document.createElement("option");
+            option.textContent = character.name;
+            option.setAttribute('value', character.name);
+            dropList.appendChild(option);
+        }
     }
 
     const checkButton = document.createElement('button');
