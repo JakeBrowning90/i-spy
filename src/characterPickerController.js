@@ -40,8 +40,6 @@ const drawCharacterPicker = (targetSquare) => {
     checkButton.textContent = "Check!";
     checkButton.addEventListener('click', () => {
         // Test passing clicked square and character name from drop menu
-        // console.log(dropList.value, targetSquare)
-        // TODO: function to check if submitted answer is correct
         checkAnswer(dropList.value, targetSquare)
         removeCharacterPicker();
         removeMarker();

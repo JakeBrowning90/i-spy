@@ -23,16 +23,9 @@ const getGameImage = () => {
                 // Draw characterPicker if none, else remove if already present
                 const characterPicker = document.querySelector('#characterPicker');
                 if (characterPicker == null) {
-                    //TODO - add selection indicator to clicked square
-                    // const targetMarker = document.createElement("div");
-                    // targetMarker.setAttribute("id", "targetMarker");
-                    // targetSquare.appendChild(targetMarker);
                     addMarker(targetSquare)
-                    drawCharacterPicker(targetSquare.id) 
+                    drawCharacterPicker(targetSquare) 
                 } else {
-                    //TODO - remove selection indicator
-                    // const targetMarker = document.querySelector('#targetMarker');
-                    // targetMarker.remove();
                     removeMarker();
                     removeCharacterPicker()
                 };

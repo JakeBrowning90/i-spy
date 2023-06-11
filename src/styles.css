@@ -86,7 +86,15 @@ body {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
-    border: 3px hsl(30, 100%, 50%) solid;
+    border: 3px #ff6600 solid;
+    border-radius: 50%;
+}
+
+.checkmark {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border: 3px #51fb3e solid;
     border-radius: 50%;
 }
 
