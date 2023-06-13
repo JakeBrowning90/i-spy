@@ -1,6 +1,7 @@
 import { clearContent } from "./clearContent";
 import { drawScoreScreen } from "./drawScoreScreen";
 import { addCheckmark } from "./tileMarkerController";
+import { scoreboard, orderScores } from "./scoreboardController";
 
 const answerKey = [
   {name: "Homer", found: false, coords: ["5,9", "5,10"]},
@@ -24,12 +25,20 @@ function checkAnswer(charName, targetSquare) {
   if (guess.coords.includes(targetSquare.id) == true) {
     console.log("Correct!")
     guess.found = true;
-    //TODO: Mark tile with green check
+
     addCheckmark(targetSquare);
 
     if (endGameCheck() == true){
       resetFound();
       clearContent();
+
+      //Add player name and score to scorebord
+      let enteredName = prompt("Enter your name:")
+      scoreboard.push({name: enteredName, score: Math.floor(Math.random() * 100)})
+      orderScores(scoreboard);
+      //trim scoreboard to 10 entries
+      scoreboard = scoreboard.slice(0, 10);
+
       drawScoreScreen();
     }
   } else {

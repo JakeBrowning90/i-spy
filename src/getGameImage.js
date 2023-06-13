@@ -1,8 +1,11 @@
 import { drawCharacterPicker, removeCharacterPicker } from "./characterPickerController";
 import { addMarker, removeMarker } from "./tileMarkerController";
+import { resetFound } from "./checkAnswer";
 import { getName } from "./gridNames";
 
 const getGameImage = () => {
+    resetFound();
+
     const gameField = document.querySelector('#gameField');
     const gameImage = document.createElement('div');
     gameImage.setAttribute("id", "gameImage");
