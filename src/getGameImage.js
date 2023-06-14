@@ -1,3 +1,4 @@
+import { gameStartTime, markStartTime } from "./timeController";
 import { drawCharacterPicker, removeCharacterPicker } from "./characterPickerController";
 import { addMarker, removeMarker } from "./tileMarkerController";
 import { resetFound } from "./checkAnswer";
@@ -5,6 +6,9 @@ import { getName } from "./gridNames";
 
 const getGameImage = () => {
     resetFound();
+    //Begin tracking time on image load
+    markStartTime();
+    console.log(gameStartTime)
 
     const gameField = document.querySelector('#gameField');
     const gameImage = document.createElement('div');

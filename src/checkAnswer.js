@@ -2,6 +2,7 @@ import { clearContent } from "./clearContent";
 import { drawScoreScreen } from "./drawScoreScreen";
 import { addCheckmark } from "./tileMarkerController";
 import { scoreboard, orderScores } from "./scoreboardController";
+import { calculateScore, markEndTime } from "./timeController";
 
 const answerKey = [
   {name: "Homer", found: false, coords: ["5,9", "5,10"]},
@@ -29,12 +30,17 @@ function checkAnswer(charName, targetSquare) {
     addCheckmark(targetSquare);
 
     if (endGameCheck() == true){
+
+      //Save time at end of game
+      markEndTime();
+      // console.log(calculateScore());
+
       resetFound();
       clearContent();
 
       //Add player name and score to scorebord
       let enteredName = prompt("Enter your name:")
-      scoreboard.push({name: enteredName, score: Math.floor(Math.random() * 100)})
+      scoreboard.push({name: enteredName, score: calculateScore()})
       orderScores(scoreboard);
       //trim scoreboard to 10 entries
       scoreboard = scoreboard.slice(0, 10);
