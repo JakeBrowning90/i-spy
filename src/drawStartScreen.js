@@ -4,9 +4,15 @@ import { drawScoreScreen } from "./drawScoreScreen";
 
 const drawStartScreen = () => {
     const content = document.querySelector('#content');
+    const startScreenBackground = document.createElement('div');
+    startScreenBackground.classList.add('startScreenBackground');
+
     const startScreenContent = document.createElement('div');
     startScreenContent.classList.add('startScreenContent');
-    startScreenContent.textContent = "Start Screen"
+
+    const titleDiv = document.createElement('div');
+    titleDiv.classList.add('titleDiv');
+    titleDiv.textContent = "Geography Quiz"
 
     const startGameButton = document.createElement('button');
     startGameButton.textContent = "Start game";
@@ -22,9 +28,11 @@ const drawStartScreen = () => {
         drawScoreScreen();
     });
 
-    content.appendChild(startScreenContent);
-    startScreenContent.appendChild(startGameButton);
-    startScreenContent.appendChild(viewScoresButton);
+    content.appendChild(startScreenBackground);
+    startScreenBackground.appendChild(startScreenContent);
+    // startScreenBackground.appendChild(titleDiv);
+    // startScreenBackground.appendChild(startGameButton);
+    // startScreenBackground.appendChild(viewScoresButton);
 }
 
 export { drawStartScreen };
