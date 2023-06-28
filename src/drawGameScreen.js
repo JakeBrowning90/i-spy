@@ -27,6 +27,10 @@ const drawGameScreen = () => {
         drawStartScreen();
     });
 
+    const gameScreenDiv = document.createElement('div');
+    gameScreenDiv.setAttribute("id", "gameScreenDiv");
+
+
     const gameField = document.createElement('div');
     gameField.setAttribute("id", "gameField");
 
@@ -36,7 +40,8 @@ const drawGameScreen = () => {
     gameControlDiv.appendChild(gameInstructionDiv)
     gameControlDiv.appendChild(characterPickerSpace)
     gameControlDiv.appendChild(homeScreenButton)
-    gameScreenContent.appendChild(gameField);
+    gameScreenContent.appendChild(gameScreenDiv);
+    gameScreenDiv.appendChild(gameField);
 
     getGameImage();
 }
