@@ -30,9 +30,9 @@ const drawStartScreen = () => {
 
     content.appendChild(startScreenBackground);
     startScreenBackground.appendChild(startScreenContent);
-    // startScreenBackground.appendChild(titleDiv);
-    // startScreenBackground.appendChild(startGameButton);
-    // startScreenBackground.appendChild(viewScoresButton);
+    startScreenContent.appendChild(titleDiv);
+    startScreenContent.appendChild(startGameButton);
+    startScreenContent.appendChild(viewScoresButton);
 }
 
 export { drawStartScreen };

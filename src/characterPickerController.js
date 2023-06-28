@@ -2,7 +2,7 @@ import { checkAnswer, answerKey } from "./checkAnswer";
 import { removeMarker } from "./tileMarkerController";
 
 const drawCharacterPicker = (targetSquare) => {
-    const gameScreenContent = document.querySelector('.gameScreenContent');
+    const characterPickerSpace = document.querySelector('#characterPickerSpace');
     const characterPicker = document.createElement('div');
     characterPicker.setAttribute("id", "characterPicker");
     characterPicker.textContent = "Who is this?";
@@ -29,14 +29,14 @@ const drawCharacterPicker = (targetSquare) => {
 
     characterPicker.appendChild(dropList);
     characterPicker.appendChild(checkButton);
-    gameScreenContent.appendChild(characterPicker);
+    characterPickerSpace.appendChild(characterPicker);
 }
 
 const removeCharacterPicker = () => {
-    const gameScreenContent = document.querySelector('.gameScreenContent');
+    const characterPickerSpace = document.querySelector('#characterPickerSpace');
     const characterPicker = document.querySelector('#characterPicker');
 
-    gameScreenContent.removeChild(characterPicker);
+    characterPickerSpace.removeChild(characterPicker);
 }
 
 export { drawCharacterPicker, removeCharacterPicker };
