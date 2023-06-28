@@ -6,16 +6,13 @@ const drawGameScreen = () => {
     const content = document.querySelector('#content');
     const gameScreenContent = document.createElement('div');
     gameScreenContent.classList.add('gameScreenContent');
-    // gameScreenContent.textContent = "Game Screen"
-
-
 
     const gameControlDiv = document.createElement('div');
     gameControlDiv.setAttribute("id", "gameControlDiv");
 
     const gameInstructionDiv = document.createElement('div');
     gameInstructionDiv.setAttribute("id", "gameInstructionDiv");
-    gameInstructionDiv.textContent = "Click an area of the picture to call the option list."
+    gameInstructionDiv.textContent = "I spy a clock, a birdhouse, a duck, five thimbles, a plane, two fish in a truck; A big red apple, a zebra jeep, STOP, GO, and BEEP BEEP BEEP. Click an area of the picture to call the option list."
 
     const characterPickerSpace = document.createElement('div');
     characterPickerSpace.setAttribute("id", "characterPickerSpace");

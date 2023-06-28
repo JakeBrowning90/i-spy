@@ -81,17 +81,22 @@ body {
 }
 
 #gameField {
-    height: 700px;
-    width: 700px;
     background-color: whitesmoke;
+    aspect-ratio: 16 / 9;
+    height: 90%;
+    /* width: 160vh;  */
+    background-image: url('./img/iSpyCityBlockHiRes.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 #gameImage {
-    background-image: url('./img/simpsonFamily.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
+    /* background-image: url('./img/iSpyLevers.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat; */
+    /* height: 80%;
+    width: auto;
+    display: flex;  */
     /* background-color: grey; */
 }
 
@@ -100,8 +105,9 @@ body {
     width: 100%;
      /* background-color: rgba(0, 255, 255, 0.116); */
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(20, 1fr);
+    box-sizing: border-box;
+    grid-template-columns: repeat(32, 1fr);
+    grid-template-rows: repeat(18, 1fr);
 }
 
 #characterPicker {
@@ -119,7 +125,8 @@ body {
 }
 
 .targetSquare {
-    border: 1px black dotted;
+    box-sizing: border-box;
+    border: 1px white dotted;
     z-index: 0;
 }
 

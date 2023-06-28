@@ -5,13 +5,23 @@ import { scoreboard, orderScores } from "./scoreboardController";
 import { calculateScore, markEndTime } from "./timeController";
 
 const answerKey = [
-  {name: "Homer", found: false, coords: ["5,9", "5,10"]},
-  {name: "Marge", found: false, coords: ['6,6']},
-  {name: "Bart", found: false, coords: ['13,2']},
-  {name: "Lisa", found: false, coords: ['12,13']},
-  {name: "Maggie", found: false, coords: ['8,7']},
-  {name: "Santa's Little Helper", found: false, coords: ['13,5']},
-  {name: "Snowball II", found: false, coords: ['16,12']},
+  {name: "Clock", found: false, coords: ["5,9", "5,10"]},
+  {name: "Birdhouse", found: false, coords: ['6,6']},
+  {name: "Duck", found: false, coords: ['13,2']},
+  {name: "Thimble (tower)", found: false, coords: ['12,13']},
+  {name: "Thimble (truck)", found: false, coords: ['12,13']},
+  {name: "Thimble (bicycle)", found: false, coords: ['12,13']},
+  {name: "Thimble (left gate)", found: false, coords: ['12,13']},
+  {name: "Thimble (right gate)", found: false, coords: ['12,13']},
+  {name: "Plane", found: false, coords: ['8,7']},
+  {name: "Two fish in a truck", found: false, coords: ['13,5']},
+  {name: "Big red apple", found: false, coords: ['16,12']},
+  {name: "Zebra jeep", found: false, coords: ['16,12']},
+  {name: "STOP", found: false, coords: ['16,12']},
+  {name: "GO", found: false, coords: ['16,12']},
+  {name: "BEEP (left)", found: false, coords: ['16,12']},
+  {name: "BEEP (center)", found: false, coords: ['16,12']},
+  {name: "BEEP (right)", found: false, coords: ['16,12']},
 ]
 
 function resetFound() {

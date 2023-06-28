@@ -12,7 +12,7 @@ const drawStartScreen = () => {
 
     const titleDiv = document.createElement('div');
     titleDiv.classList.add('titleDiv');
-    titleDiv.textContent = "Geography Quiz"
+    titleDiv.textContent = "I Spy: A Fan Game Tribute"
 
     const startGameButton = document.createElement('button');
     startGameButton.textContent = "Start game";

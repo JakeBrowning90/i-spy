@@ -2,6 +2,7 @@ import { gameStartTime, markStartTime } from "./timeController";
 import { drawCharacterPicker, removeCharacterPicker } from "./characterPickerController";
 import { addMarker, removeMarker } from "./tileMarkerController";
 import { resetFound } from "./checkAnswer";
+// import iSpyLevers from './img/iSpyLevers.jpeg';
 import { getName } from "./gridNames";
 
 const getGameImage = () => {
@@ -10,18 +11,27 @@ const getGameImage = () => {
     markStartTime();
     console.log(gameStartTime)
 
+    const gameScreenDiv = document.querySelector('#gameScreenDiv');
+
     const gameField = document.querySelector('#gameField');
     const gameImage = document.createElement('div');
+    // gameImage.src = '../img/iSpyLevers.jpeg'
     gameImage.setAttribute("id", "gameImage");
 
+    // const gameImage = new Image();
+    // gameImage.src = iSpyLevers;
+    // gameImage.setAttribute("id", "gameImage");
+    
     const targetGrid = document.createElement('div');
     targetGrid.setAttribute("id", "targetGrid");
 
-    gameField.appendChild(gameImage);
-    gameImage.appendChild(targetGrid);
+    // gameField.appendChild(gameImage);
+    gameField.appendChild(targetGrid);
 
-    for (let i = 0; i < 20; i++) {
-        for (let j = 0; j < 20; j++) {
+    // gameImage.appendChild(targetGrid);
+
+    for (let i = 0; i < 18; i++) {
+        for (let j = 0; j < 32; j++) {
             let targetSquare = document.createElement("div");
             targetSquare.classList.add("targetSquare");
             targetSquare.setAttribute("id", `${[i, j]}`);
