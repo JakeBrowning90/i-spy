@@ -30,8 +30,8 @@ const getGameImage = () => {
 
     // gameImage.appendChild(targetGrid);
 
-    for (let i = 0; i < 18; i++) {
-        for (let j = 0; j < 32; j++) {
+    for (let i = 0; i < 36; i++) {
+        for (let j = 0; j < 64; j++) {
             let targetSquare = document.createElement("div");
             targetSquare.classList.add("targetSquare");
             targetSquare.setAttribute("id", `${[i, j]}`);
