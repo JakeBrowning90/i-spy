@@ -37,6 +37,8 @@ const getGameImage = () => {
             targetSquare.setAttribute("id", `${[i, j]}`);
             targetSquare.addEventListener('click', () => {
                 // getName(targetSquare.id)
+                const feedbackDiv = document.querySelector('#feedbackDiv');
+                feedbackDiv.textContent = "";
                 // Draw characterPicker if none, else remove if already present
                 const characterPicker = document.querySelector('#characterPicker');
                 if (characterPicker == null) {

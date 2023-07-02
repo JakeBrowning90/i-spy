@@ -31,13 +31,16 @@ function resetFound() {
 }
 
 function checkAnswer(charName, targetSquare) {
+
+  const feedbackDiv = document.querySelector('#feedbackDiv');
+
   console.log("Is " + charName + " at " + targetSquare.id + "?")
   let guess = answerKey.find(({ name }) => name === charName);
   if (guess.coords.includes(targetSquare.id) == true) {
-    console.log("Correct!")
+    console.log("Correct!");
     guess.found = true;
-
     addCheckmark(targetSquare);
+    feedbackDiv.textContent = "Correct!";
 
     if (endGameCheck() == true){
 
@@ -59,6 +62,7 @@ function checkAnswer(charName, targetSquare) {
     }
   } else {
     console.log("Try again")
+    feedbackDiv.textContent = "Try again";
   }
 };
 
