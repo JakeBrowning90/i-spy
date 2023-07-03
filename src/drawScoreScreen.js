@@ -4,9 +4,18 @@ import { scoreboard, orderScores, drawScores } from "./scoreboardController";
 
 const drawScoreScreen = () => {
     const content = document.querySelector('#content');
+    const scoreScreenBackground = document.createElement('div');
+    scoreScreenBackground.classList.add('scoreScreenBackground');
+
     const scoreScreenContent = document.createElement('div');
     scoreScreenContent.classList.add('scoreScreenContent');
-    scoreScreenContent.textContent = "Score Screen"
+
+    const scoreTitleDiv = document.createElement('h1');
+    scoreTitleDiv.classList.add('scoreTitleDiv');
+    scoreTitleDiv.textContent = "Fastest Finders"
+
+    const scoreDisplayDiv = document.createElement('div'); 
+    scoreDisplayDiv.setAttribute("id", "scoreDisplayDiv")  
 
     const homeScreenButton = document.createElement('button');
     homeScreenButton.textContent = "Back to Home";
@@ -15,12 +24,11 @@ const drawScoreScreen = () => {
         drawStartScreen();
     });
 
-    const scoreDisplayDiv = document.createElement('div'); 
-    scoreDisplayDiv.setAttribute("id", "scoreDisplayDiv")  
-
-    content.appendChild(scoreScreenContent);
-    scoreScreenContent.appendChild(homeScreenButton);
+    content.appendChild(scoreScreenBackground);
+    scoreScreenBackground.appendChild(scoreScreenContent);
+    scoreScreenContent.appendChild(scoreTitleDiv);
     scoreScreenContent.appendChild(scoreDisplayDiv);
+    scoreScreenContent.appendChild(homeScreenButton);
 
     //TODO: function to display scores from array on scoreDisplayDiv
     //sort scores and player by descending score value

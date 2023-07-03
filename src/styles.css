@@ -5,25 +5,48 @@ body {
     height: 100vh;
 }
 
+button {
+    height: 40%;
+}
+
 h1 {
-    font-size: 6em;
+    font-size: 7em;
+    color: rgb(232, 232, 232);
     justify-self: center;
     align-self: center;
 }
 
-#header, #footer {
-    background-color: rgb(203, 203, 252);
-    width: 100%;
-    height: 50px;
+h2 {
+    font-size: 2em;
+    justify-self: center;
+    align-self: center;
 }
 
-#header {
+ul {
+    list-style: circle;
+}
+
+li {
+    display: list-item;
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+#header, #footer {
+    background-color: #21006f;
+    color: white;
+    width: 100%;
+    height: 50px;
+    
+}
+
+/* #header {
     height: 10%;
 }
 
 #footer {
     height: 5%;
-}
+} */
 
 #content {
     flex-grow: 1;
@@ -33,44 +56,64 @@ h1 {
     height: 100%;
 }
 
-.startScreenBackground {
+.startScreenBackground, .scoreScreenBackground {
     height: 100%;
     /* background-color: pink; */
+    background: linear-gradient(0deg, #21006f 0%, #f13f8f 50%, #21006f 100%);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.startScreenContent {
+.startScreenContent, .scoreScreenContent {
     height: 100%;
     width: 50%;
-    background-color: grey;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 10px;
+    gap: 20px;
 }
 
-.titleDiv {
+.titleDiv, .scoreTitleDiv {
     grid-column: 1 / -1;
-    /* background-color: greenyellow; */
     border-radius: 10px;
 }
 
 .instructionDiv {
     grid-column: 1 / -1;
-    background-color: greenyellow;
+    background-color: #21006f;
+    color: aqua;
     border-radius: 10px;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    filter: drop-shadow(10px 10px orange);
+}
+
+.instructionDiv > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#scoreDisplayDiv {
+    grid-column: 1 / -1;
+    background-color: rgb(159, 159, 245);
+    display: grid;
+    grid-template-rows: repeat(10 1fr);
 }
 
 .gameScreenContent {
-    background-color: rgb(160, 255, 160);
+    /* background-color: rgb(160, 255, 160); */
+    background: linear-gradient(0deg, #21006f 0%, #f13f8f 50%, #21006f 100%);
     height: 100%;
     display: flex;
     flex-direction: row;
+    gap: 20px;
+    padding-left: 20px;
 }
 
 #gameControlDiv {
+    box-sizing: border-box;
     height: 100%;
     width: 200px;
     background-color: rgb(0, 170, 255);
@@ -171,14 +214,3 @@ h1 {
     border-radius: 50%;
 }
 
-.scoreScreenContent {
-    background-color: rgb(240, 255, 80);
-}
-
-#scoreDisplayDiv {
-    height: 70%;
-    width: 70%;
-    background-color: rgb(159, 159, 245);
-    display: grid;
-    grid-template-rows: repeat(10 1fr);
-}

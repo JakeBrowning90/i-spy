@@ -14,9 +14,18 @@ const drawStartScreen = () => {
     titleDiv.classList.add('titleDiv');
     titleDiv.textContent = "I Spy"
 
-    const instructionDiv = document.createElement('div');
+    const instructionDiv = document.createElement('ul');
     instructionDiv.classList.add('instructionDiv');
-    instructionDiv.textContent = "Instructions:"
+
+    const instructionHeader = document.createElement('h2');
+    instructionHeader.textContent = "Instructions:"
+
+    const instruct1 = document.createElement('li');
+    instruct1.textContent = "Locate all the items named in the riddle."
+    const instruct2 = document.createElement('li');
+    instruct2.textContent = "Click on an area of the picture to guess which item is there."
+    const instruct3 = document.createElement('li');
+    instruct3.textContent = "Find every item fast enough to get on the scoreboard!"
 
     const startGameButton = document.createElement('button');
     startGameButton.textContent = "Start game";
@@ -36,6 +45,11 @@ const drawStartScreen = () => {
     startScreenBackground.appendChild(startScreenContent);
     startScreenContent.appendChild(titleDiv);
     startScreenContent.appendChild(instructionDiv);
+    instructionDiv.appendChild(instructionHeader);
+    instructionDiv.appendChild(instruct1);
+    instructionDiv.appendChild(instruct2);
+    instructionDiv.appendChild(instruct3);
+
     startScreenContent.appendChild(startGameButton);
     startScreenContent.appendChild(viewScoresButton);
 }
