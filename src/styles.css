@@ -5,6 +5,12 @@ body {
     height: 100vh;
 }
 
+h1 {
+    font-size: 6em;
+    justify-self: center;
+    align-self: center;
+}
+
 #header, #footer {
     background-color: rgb(203, 203, 252);
     width: 100%;
@@ -29,23 +35,29 @@ body {
 
 .startScreenBackground {
     height: 100%;
-    background-color: pink;
+    /* background-color: pink; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .startScreenContent {
-    height: 50%;
+    height: 100%;
     width: 50%;
     background-color: grey;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 3fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
     gap: 10px;
 }
 
 .titleDiv {
+    grid-column: 1 / -1;
+    /* background-color: greenyellow; */
+    border-radius: 10px;
+}
+
+.instructionDiv {
     grid-column: 1 / -1;
     background-color: greenyellow;
     border-radius: 10px;

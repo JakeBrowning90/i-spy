@@ -10,9 +10,13 @@ const drawStartScreen = () => {
     const startScreenContent = document.createElement('div');
     startScreenContent.classList.add('startScreenContent');
 
-    const titleDiv = document.createElement('div');
+    const titleDiv = document.createElement('h1');
     titleDiv.classList.add('titleDiv');
-    titleDiv.textContent = "I Spy: A Fan Game Tribute"
+    titleDiv.textContent = "I Spy"
+
+    const instructionDiv = document.createElement('div');
+    instructionDiv.classList.add('instructionDiv');
+    instructionDiv.textContent = "Instructions:"
 
     const startGameButton = document.createElement('button');
     startGameButton.textContent = "Start game";
@@ -31,6 +35,7 @@ const drawStartScreen = () => {
     content.appendChild(startScreenBackground);
     startScreenBackground.appendChild(startScreenContent);
     startScreenContent.appendChild(titleDiv);
+    startScreenContent.appendChild(instructionDiv);
     startScreenContent.appendChild(startGameButton);
     startScreenContent.appendChild(viewScoresButton);
 }
