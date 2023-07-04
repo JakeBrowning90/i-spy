@@ -24,9 +24,11 @@ const drawGameScreen = () => {
 
     const characterPickerSpace = document.createElement('div');
     characterPickerSpace.setAttribute("id", "characterPickerSpace");
+    // characterPickerSpace.textContent = "Click the hidden objects in the picture."
 
     const homeScreenButton = document.createElement('button');
     homeScreenButton.textContent = "Back to Home";
+    homeScreenButton.setAttribute("id", "gameScreenHomeButton");
     homeScreenButton.addEventListener("click", function () {
         clearContent();
         drawStartScreen();
