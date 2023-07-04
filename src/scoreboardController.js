@@ -19,8 +19,11 @@ const drawScores = (scoreboard) => {
   const scoreDisplayDiv = document.querySelector("#scoreDisplayDiv")
   for (let i = 0; i < scoreboard.length; i++) {
     let entry = scoreboard[i];
+    let displayedName = document.createElement('div');
     let displayedScore = document.createElement('div');
-    displayedScore.textContent = entry.name + ": " + entry.score;
+    displayedName.textContent = i + 1 + ". "+ entry.name + ":";
+    displayedScore.textContent = entry.score;
+    scoreDisplayDiv.appendChild(displayedName);
     scoreDisplayDiv.appendChild(displayedScore);
   }
 }
