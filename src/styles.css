@@ -65,13 +65,28 @@ li {
     align-items: center;
 }
 
-.startScreenContent, .scoreScreenContent {
+.startScreenContent {
     height: 100%;
     width: 50%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 20px;
+}
+
+.scoreScreenContent {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 3fr 1fr;
+    gap: 20px;
+}
+
+#scoreScreenHomeButton {
+    grid-column: 1/-1;
+    width: 50%;
+    align-self: center;
+    justify-self: center;
 }
 
 .titleDiv, .scoreTitleDiv {
@@ -97,9 +112,9 @@ li {
 
 #scoreDisplayDiv {
     grid-column: 1 / -1;
-    background-color: rgb(159, 159, 245);
+    background-color: rgb(159, 245, 195);
     display: grid;
-    grid-template-rows: repeat(10 1fr);
+    grid-template-rows: 2fr repeat(10, 1fr);
 }
 
 .gameScreenContent {

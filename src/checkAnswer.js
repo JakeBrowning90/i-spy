@@ -15,7 +15,7 @@ const answerKey = [
   {name: "Thimble (right gate)", found: false, coords:  ['34,27', '35,27']},
   {name: "Plane", found: false, coords:  [ '5,22', '5,23', '5,24', '6,23']},
   {name: "Two fish in a truck", found: false, coords:  ['23,44', '23,45', '23,46']},
-  {name: "Big red apple", found: false, coords: ['9,48', '10,48']},
+  {name: "Big red apple", found: false, coords: ['9,48', '9,49']},
   {name: "Zebra jeep", found: false, coords: ['22,5', '22,6', '23,5', '23,6', '23,7']},
   {name: "STOP", found: false, coords: ['17,7']},
   {name: "GO", found: false, coords: ['28,40']},

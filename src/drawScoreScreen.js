@@ -10,7 +10,7 @@ const drawScoreScreen = () => {
     const scoreScreenContent = document.createElement('div');
     scoreScreenContent.classList.add('scoreScreenContent');
 
-    const scoreTitleDiv = document.createElement('h1');
+    const scoreTitleDiv = document.createElement('h2');
     scoreTitleDiv.classList.add('scoreTitleDiv');
     scoreTitleDiv.textContent = "Fastest Finders"
 
@@ -19,6 +19,7 @@ const drawScoreScreen = () => {
 
     const homeScreenButton = document.createElement('button');
     homeScreenButton.textContent = "Back to Home";
+    homeScreenButton.setAttribute('id', 'scoreScreenHomeButton')
     homeScreenButton.addEventListener("click", function () {
         clearContent();
         drawStartScreen();
@@ -26,8 +27,10 @@ const drawScoreScreen = () => {
 
     content.appendChild(scoreScreenBackground);
     scoreScreenBackground.appendChild(scoreScreenContent);
-    scoreScreenContent.appendChild(scoreTitleDiv);
+    // scoreScreenContent.appendChild(scoreTitleDiv);
     scoreScreenContent.appendChild(scoreDisplayDiv);
+    scoreDisplayDiv.appendChild(scoreTitleDiv);
+
     scoreScreenContent.appendChild(homeScreenButton);
 
     //TODO: function to display scores from array on scoreDisplayDiv
