@@ -11,6 +11,32 @@ let scoreboard = [
     {name: "JJJ", score: 280},
   ]
 
+// let scoreboard = [
+//   {name: "AAA", score: 1},
+//   {name: "BBB", score: 2},
+//   {name: "CCC", score: 3},
+//   {name: "DDD", score: 4},
+//   {name: "EEE", score: 5},
+//   {name: "FFF", score: 6},
+//   {name: "GGG", score: 7},
+//   {name: "HHH", score: 8},
+//   {name: "III", score: 9},
+//   {name: "JJJ", score: 10},
+// ]
+
+const drawPlayerNameInput = () => {
+  // const gameField = document.getElementById("gameField")
+  const gameField = document.querySelector('#gameField');
+  while (gameField.firstChild) {
+    gameField.removeChild(gameField.firstChild);
+  }
+
+  const playerNameInput = document.createElement('div');
+  playerNameInput.classList.add('blueBlock');
+  playerNameInput.textContent = "Well done! Enter your name for the scoreboard!";
+  gameField.appendChild(playerNameInput);
+}
+
 const orderScores = (scoreboard) => {
   scoreboard.sort((a, b) => a.score - b.score)
 }

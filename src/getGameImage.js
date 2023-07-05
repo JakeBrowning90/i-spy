@@ -14,13 +14,6 @@ const getGameImage = () => {
     const gameScreenDiv = document.querySelector('#gameScreenDiv');
 
     const gameField = document.querySelector('#gameField');
-    const gameImage = document.createElement('div');
-    // gameImage.src = '../img/iSpyLevers.jpeg'
-    gameImage.setAttribute("id", "gameImage");
-
-    // const gameImage = new Image();
-    // gameImage.src = iSpyLevers;
-    // gameImage.setAttribute("id", "gameImage");
     
     const targetGrid = document.createElement('div');
     targetGrid.setAttribute("id", "targetGrid");
