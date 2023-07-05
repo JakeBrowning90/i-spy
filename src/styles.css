@@ -23,12 +23,12 @@ h2 {
 }
 
 ul {
-    list-style: circle;
+    /* list-style: circle; */
 }
 
 li {
     display: list-item;
-    list-style-type: circle;
+    /* list-style-type: circle; */
     padding-left: 20px;
 }
 
@@ -75,15 +75,23 @@ li {
     gap: 20px;
 }
 
-#scoreDisplayDiv {
-    grid-column: 1 / -1;
+#scoreDisplayDiv, .instructionDiv, #gameInstructionDiv, #characterPickerSpace {
     background-color: #21006f;
     color: aqua;
+    border-radius: 10px;
+    filter: drop-shadow(5px 5px orange);
+    padding: 5px;
+}
+
+#scoreDisplayDiv {
+    grid-column: 1 / -1;
+    /* background-color: #21006f; */
+    /* color: aqua; */
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 2fr repeat(10, 1fr);
-    border-radius: 10px;
-    filter: drop-shadow(10px 10px orange);
+    /* border-radius: 10px;
+    filter: drop-shadow(10px 10px orange); */
 }
 
 #scoreDisplayDiv > * {
@@ -106,12 +114,12 @@ li {
 
 .instructionDiv {
     grid-column: 1 / -1;
-    background-color: #21006f;
-    color: aqua;
-    border-radius: 10px;
+    /* background-color: #21006f; */
+    /* color: aqua; */
+    /* border-radius: 10px; */
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-    filter: drop-shadow(10px 10px orange);
+    /* filter: drop-shadow(10px 10px orange); */
 }
 
 .instructionDiv > * {
@@ -144,19 +152,21 @@ li {
 }
 
 #gameInstructionDiv {
-    background-color: #ffc39b;
+    /* background-color: #ffc39b; */
 }
 
-#feedbackDiv {
-    
-}
+/* #feedbackDiv {
+    background-color: #ffc39b;
+} */
 
 #characterPickerSpace {
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    /* background-color: #b99bff; */
 }
 
 #gameScreenHomeButton {
     height: 30px;
+    margin-top: auto;
 }
 
 #gameScreenDiv {
@@ -206,8 +216,8 @@ li {
 #characterPicker {
     /* height: 25%;
     width: 25%; */
-    background-color: orange;
-    border: solid black 2px;
+    /* background-color: orange;
+    border: solid black 2px; */
     /* position: relative;
     right: 0;
     left: 0;

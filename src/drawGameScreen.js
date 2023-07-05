@@ -24,7 +24,7 @@ const drawGameScreen = () => {
 
     const characterPickerSpace = document.createElement('div');
     characterPickerSpace.setAttribute("id", "characterPickerSpace");
-    // characterPickerSpace.textContent = "Click the hidden objects in the picture."
+    characterPickerSpace.textContent = "Click the hidden objects in the picture."
 
     const homeScreenButton = document.createElement('button');
     homeScreenButton.textContent = "Back to Home";
@@ -47,7 +47,7 @@ const drawGameScreen = () => {
     gameControlDiv.appendChild(gameInstructionDiv)
     gameInstructionDiv.appendChild(itemPoem)
     writePoem();
-    gameControlDiv.appendChild(feedbackDiv)
+    // gameControlDiv.appendChild(feedbackDiv)
     gameControlDiv.appendChild(characterPickerSpace)
     gameControlDiv.appendChild(homeScreenButton)
     gameScreenContent.appendChild(gameScreenDiv);

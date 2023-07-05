@@ -37,14 +37,16 @@ const getGameImage = () => {
             targetSquare.setAttribute("id", `${[i, j]}`);
             targetSquare.addEventListener('click', () => {
                 // getName(targetSquare.id)
-                const feedbackDiv = document.querySelector('#feedbackDiv');
-                feedbackDiv.textContent = "";
+                const characterPickerSpace = document.querySelector('#characterPickerSpace');
+                // characterPickerSpace.textContent = "";
                 // Draw characterPicker if none, else remove if already present
                 const characterPicker = document.querySelector('#characterPicker');
                 if (characterPicker == null) {
+                    characterPickerSpace.textContent = "";
                     addMarker(targetSquare)
                     drawCharacterPicker(targetSquare) 
                 } else {
+                    characterPickerSpace.textContent = "Click the hidden objects in the picture.";
                     removeMarker();
                     removeCharacterPicker()
                 };

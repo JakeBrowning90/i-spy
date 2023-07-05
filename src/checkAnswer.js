@@ -32,7 +32,7 @@ function resetFound() {
 
 function checkAnswer(charName, targetSquare) {
 
-  const feedbackDiv = document.querySelector('#feedbackDiv');
+  const characterPickerSpace = document.querySelector('#characterPickerSpace');
 
   console.log("Is " + charName + " at " + targetSquare.id + "?")
   let guess = answerKey.find(({ name }) => name === charName);
@@ -40,7 +40,7 @@ function checkAnswer(charName, targetSquare) {
     console.log("Correct!");
     guess.found = true;
     addCheckmark(targetSquare);
-    feedbackDiv.textContent = "Correct!";
+    characterPickerSpace.textContent = "Correct!";
 
     if (endGameCheck() == true){
 
@@ -62,7 +62,7 @@ function checkAnswer(charName, targetSquare) {
     }
   } else {
     console.log("Try again")
-    feedbackDiv.textContent = "Try again";
+    characterPickerSpace.textContent = "Try again";
   }
 };
 
