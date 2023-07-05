@@ -1,14 +1,14 @@
 let scoreboard = [
-    {name: "AAA", score: 80},
-    {name: "BBB", score: 90},
-    {name: "CCC", score: 100},
-    {name: "DDD", score: 110},
-    {name: "EEE", score: 120},
-    {name: "FFF", score: 130},
-    {name: "GGG", score: 140},
-    {name: "HHH", score: 150},
-    {name: "III", score: 160},
-    {name: "JJJ", score: 170},
+    {name: "AAA", score: 100},
+    {name: "BBB", score: 120},
+    {name: "CCC", score: 140},
+    {name: "DDD", score: 160},
+    {name: "EEE", score: 180},
+    {name: "FFF", score: 200},
+    {name: "GGG", score: 220},
+    {name: "HHH", score: 240},
+    {name: "III", score: 260},
+    {name: "JJJ", score: 280},
   ]
 
 const orderScores = (scoreboard) => {

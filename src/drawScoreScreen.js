@@ -15,6 +15,7 @@ const drawScoreScreen = () => {
     scoreTitleDiv.textContent = "Fastest Finders"
 
     const scoreDisplayDiv = document.createElement('div'); 
+    scoreDisplayDiv.classList.add('blueBlock');
     scoreDisplayDiv.setAttribute("id", "scoreDisplayDiv")  
 
     const homeScreenButton = document.createElement('button');

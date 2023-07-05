@@ -15,7 +15,8 @@ const drawStartScreen = () => {
     titleDiv.textContent = "I Spy"
 
     const instructionDiv = document.createElement('ul');
-    instructionDiv.classList.add('instructionDiv');
+    instructionDiv.classList.add('blueBlock');
+    instructionDiv.setAttribute('id', 'instructionDiv');
 
     const instructionHeader = document.createElement('h2');
     instructionHeader.textContent = "Instructions:"

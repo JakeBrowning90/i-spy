@@ -12,6 +12,7 @@ const drawGameScreen = () => {
     gameControlDiv.setAttribute("id", "gameControlDiv");
 
     const gameInstructionDiv = document.createElement('div');
+    gameInstructionDiv.classList.add('blueBlock');
     gameInstructionDiv.setAttribute("id", "gameInstructionDiv");
     gameInstructionDiv.textContent = "I spy..."
     
@@ -23,6 +24,7 @@ const drawGameScreen = () => {
     feedbackDiv.textContent = "Click the hidden objects in the picture."
 
     const characterPickerSpace = document.createElement('div');
+    characterPickerSpace.classList.add('blueBlock');
     characterPickerSpace.setAttribute("id", "characterPickerSpace");
     characterPickerSpace.textContent = "Click the hidden objects in the picture."
 
