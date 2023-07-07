@@ -34,10 +34,10 @@ const drawPlayerNameInput = (playerScore) => {
     gameField.removeChild(gameField.firstChild);
   }
 
-  const playerNameInputDiv = document.createElement('div');
-  playerNameInputDiv.setAttribute('id','playerNameInputDiv');
-  playerNameInputDiv.classList.add('blueBlock');
-  playerNameInputDiv.textContent = "Well done! Enter your name for the scoreboard!";
+  const playerNameInputForm = document.createElement('form');
+  playerNameInputForm.setAttribute('id','playerNameInputForm');
+  playerNameInputForm.classList.add('blueBlock');
+  playerNameInputForm.textContent = "Well done! Enter your name for the scoreboard!";
 
   const playerNameInput = document.createElement("input");
   playerNameInput.setAttribute("required", "");
@@ -46,9 +46,13 @@ const drawPlayerNameInput = (playerScore) => {
 
   const submitButton = document.createElement("input");
   submitButton.setAttribute("type", "submit");
-  submitButton.addEventListener("click", function () {
-    // event.preventDefault();
-    // let enteredName = playerNameInput.value; 
+
+  playerNameInputForm.appendChild(playerNameInput)
+  playerNameInputForm.appendChild(submitButton)
+
+  playerNameInputForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
     scoreboard.push({name: playerNameInput.value, score: playerScore})
     orderScores(scoreboard)
     scoreboard = scoreboard.slice(0, 10);
@@ -58,9 +62,8 @@ const drawPlayerNameInput = (playerScore) => {
   // let enteredName = prompt("You're a top 10 player! Enter your name:")
   // scoreboard.push({name: enteredName, score: playerScore})
 
-  gameField.appendChild(playerNameInputDiv);
-  playerNameInputDiv.appendChild(playerNameInput)
-  playerNameInputDiv.appendChild(submitButton)
+  gameField.appendChild(playerNameInputForm);
+
 }
 
 const orderScores = (scoreboard) => {

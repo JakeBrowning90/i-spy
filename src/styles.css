@@ -230,7 +230,7 @@ li {
     border-radius: 50%;
 }
 
-#playerNameInputDiv {
+#playerNameInputForm {
     height: 50%;
     align-self: center;
     justify-self: center;
