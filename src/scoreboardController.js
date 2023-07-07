@@ -37,7 +37,13 @@ const drawPlayerNameInput = (playerScore) => {
   const playerNameInputForm = document.createElement('form');
   playerNameInputForm.setAttribute('id','playerNameInputForm');
   playerNameInputForm.classList.add('blueBlock');
-  playerNameInputForm.textContent = "Well done! Enter your name for the scoreboard!";
+  playerNameInputForm.textContent = "Great job, you got a high score!";
+
+  const inputDiv = document.createElement("div");
+
+  const playerNameLabel = document.createElement("label");
+  playerNameLabel.setAttribute("for", "playerNameInput");
+  playerNameLabel.textContent = "Enter your name: ";
 
   const playerNameInput = document.createElement("input");
   playerNameInput.setAttribute("required", "");
@@ -46,8 +52,12 @@ const drawPlayerNameInput = (playerScore) => {
 
   const submitButton = document.createElement("input");
   submitButton.setAttribute("type", "submit");
+  submitButton.setAttribute("id", "nameEntrySubmitButton");
 
-  playerNameInputForm.appendChild(playerNameInput)
+
+  playerNameInputForm.appendChild(inputDiv)
+  inputDiv.appendChild(playerNameLabel)
+  inputDiv.appendChild(playerNameInput)
   playerNameInputForm.appendChild(submitButton)
 
   playerNameInputForm.addEventListener("submit", (event) => {

@@ -201,7 +201,9 @@ li {
 }
 
 #characterPicker {
-
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .targetSquare {
@@ -231,8 +233,26 @@ li {
 }
 
 #playerNameInputForm {
-    height: 50%;
+    /* height: 50%; */
+    padding: 20px;
+    gap: 20px;
     align-self: center;
     justify-self: center;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* grid-template-rows: repeat(3, 1fr); */
+}
+
+#playerNameInputForm > * {
+    display: flex;
+    flex-direction: column;
+}
+
+#nameEntrySubmitButton {
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
 }
