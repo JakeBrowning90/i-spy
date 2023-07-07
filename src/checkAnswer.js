@@ -49,7 +49,7 @@ function checkAnswer(charName, targetSquare) {
       // console.log(calculateScore());
 
       resetFound();
-      clearContent();
+      
       //To-do: check if player score is greater than greatest on scoreboard
       orderScores(scoreboard);
       let playerScore = calculateScore()
@@ -57,16 +57,17 @@ function checkAnswer(charName, targetSquare) {
       //Add player name and score to scorebord
       //TODO- give prompt ONLY if player score qualifies.
       if (playerScore < scoreboard[9].score) {
-        // drawPlayerNameInput();
-        let enteredName = prompt("You're a top 10 player! Enter your name:")
-        scoreboard.push({name: enteredName, score: playerScore})
+        drawPlayerNameInput(playerScore);
+        //TODO: 
+        // let enteredName = prompt("You're a top 10 player! Enter your name:")
+        // scoreboard.push({name: enteredName, score: playerScore})
+      } else {
+        // orderScores(scoreboard);
+        //trim scoreboard to 10 entries
+        scoreboard = scoreboard.slice(0, 10);
+        clearContent();
+        drawScoreScreen();
       }
-
-      orderScores(scoreboard);
-      //trim scoreboard to 10 entries
-      scoreboard = scoreboard.slice(0, 10);
-
-      drawScoreScreen();
     }
   } else {
     console.log("Try again")

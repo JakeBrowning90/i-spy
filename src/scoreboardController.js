@@ -1,3 +1,6 @@
+import { drawScoreScreen } from "./drawScoreScreen";
+import { clearContent } from "./clearContent";
+
 let scoreboard = [
     {name: "AAA", score: 100},
     {name: "BBB", score: 120},
@@ -24,17 +27,40 @@ let scoreboard = [
 //   {name: "JJJ", score: 10},
 // ]
 
-const drawPlayerNameInput = () => {
-  // const gameField = document.getElementById("gameField")
-  const gameField = document.querySelector('#gameField');
+const drawPlayerNameInput = (playerScore) => {
+  const gameField = document.getElementById("gameField")
+  // const characterPickerSpace = document.querySelector('#characterPickerSpace');
   while (gameField.firstChild) {
     gameField.removeChild(gameField.firstChild);
   }
 
-  const playerNameInput = document.createElement('div');
-  playerNameInput.classList.add('blueBlock');
-  playerNameInput.textContent = "Well done! Enter your name for the scoreboard!";
-  gameField.appendChild(playerNameInput);
+  const playerNameInputDiv = document.createElement('div');
+  playerNameInputDiv.setAttribute('id','playerNameInputDiv');
+  playerNameInputDiv.classList.add('blueBlock');
+  playerNameInputDiv.textContent = "Well done! Enter your name for the scoreboard!";
+
+  const playerNameInput = document.createElement("input");
+  playerNameInput.setAttribute("required", "");
+  playerNameInput.setAttribute("id", "playerNameInput");
+  playerNameInput.setAttribute("name", "playerNameInput");
+
+  const submitButton = document.createElement("input");
+  submitButton.setAttribute("type", "submit");
+  submitButton.addEventListener("click", function () {
+    // event.preventDefault();
+    // let enteredName = playerNameInput.value; 
+    scoreboard.push({name: playerNameInput.value, score: playerScore})
+    orderScores(scoreboard)
+    scoreboard = scoreboard.slice(0, 10);
+    clearContent();
+    drawScoreScreen();
+  });
+  // let enteredName = prompt("You're a top 10 player! Enter your name:")
+  // scoreboard.push({name: enteredName, score: playerScore})
+
+  gameField.appendChild(playerNameInputDiv);
+  playerNameInputDiv.appendChild(playerNameInput)
+  playerNameInputDiv.appendChild(submitButton)
 }
 
 const orderScores = (scoreboard) => {
@@ -54,4 +80,4 @@ const drawScores = (scoreboard) => {
   }
 }
   
-export { scoreboard, orderScores, drawScores }
+export { scoreboard, orderScores, drawScores, drawPlayerNameInput }

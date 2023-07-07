@@ -177,6 +177,8 @@ li {
 
 #gameField {
     background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
     /* border: 1px #5bdea5 solid; */
     height: 100%;
     aspect-ratio: 16 / 9;
@@ -228,3 +230,9 @@ li {
     border-radius: 50%;
 }
 
+#playerNameInputDiv {
+    height: 50%;
+    align-self: center;
+    justify-self: center;
+    margin: 0 auto;
+}
