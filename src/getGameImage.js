@@ -3,7 +3,6 @@ import { drawCharacterPicker, removeCharacterPicker } from "./characterPickerCon
 import { addMarker, removeMarker } from "./tileMarkerController";
 import { resetFound } from "./checkAnswer";
 // import iSpyLevers from './img/iSpyLevers.jpeg';
-import { getName } from "./gridNames";
 
 const getGameImage = () => {
     resetFound();
@@ -18,10 +17,7 @@ const getGameImage = () => {
     const targetGrid = document.createElement('div');
     targetGrid.setAttribute("id", "targetGrid");
 
-    // gameField.appendChild(gameImage);
     gameField.appendChild(targetGrid);
-
-    // gameImage.appendChild(targetGrid);
 
     for (let i = 0; i < 36; i++) {
         for (let j = 0; j < 64; j++) {
@@ -29,9 +25,7 @@ const getGameImage = () => {
             targetSquare.classList.add("targetSquare");
             targetSquare.setAttribute("id", `${[i, j]}`);
             targetSquare.addEventListener('click', () => {
-                // getName(targetSquare.id)
                 const characterPickerSpace = document.querySelector('#characterPickerSpace');
-                // characterPickerSpace.textContent = "";
                 // Draw characterPicker if none, else remove if already present
                 const characterPicker = document.querySelector('#characterPicker');
                 if (characterPicker == null) {

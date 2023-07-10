@@ -34,7 +34,7 @@ const drawScoreScreen = () => {
 
     scoreScreenContent.appendChild(homeScreenButton);
 
-    //TODO: function to display scores from array on scoreDisplayDiv
+    //function to display scores from array on scoreDisplayDiv
     //sort scores and player by descending score value
     orderScores(scoreboard);
     drawScores(scoreboard);

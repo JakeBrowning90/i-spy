@@ -87,7 +87,7 @@ li {
     border: 1px #5bdea5 solid;
     color: #abf3d4;
     border-radius: 10px;
-    filter: drop-shadow(5px 5px orange);
+    filter: drop-shadow(5px 5px #f99b1d);
     padding: 5px;
 }
 
@@ -220,7 +220,8 @@ li {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
-    border: 3px #ff6600 solid;
+    border: 3px #f99b1d solid;
+    background-color: rgba(255, 255, 255, 0.159);
     border-radius: 50%;
 }
 
@@ -230,6 +231,13 @@ li {
     width: 100%;
     border: 3px #51fb3e solid;
     border-radius: 50%;
+}
+
+#transLayer {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.201);
+    display: flex;
 }
 
 #playerNameInputForm {

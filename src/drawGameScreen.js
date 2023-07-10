@@ -44,12 +44,12 @@ const drawGameScreen = () => {
     gameField.setAttribute("id", "gameField");
 
     content.appendChild(gameScreenContent);
-    // gameScreenContent.appendChild(homeScreenButton);
+
     gameScreenContent.appendChild(gameControlDiv);
     gameControlDiv.appendChild(gameInstructionDiv)
     gameInstructionDiv.appendChild(itemPoem)
     writePoem();
-    // gameControlDiv.appendChild(feedbackDiv)
+
     gameControlDiv.appendChild(characterPickerSpace)
     gameControlDiv.appendChild(homeScreenButton)
     gameScreenContent.appendChild(gameScreenDiv);

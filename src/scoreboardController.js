@@ -1,31 +1,23 @@
 import { drawScoreScreen } from "./drawScoreScreen";
 import { clearContent } from "./clearContent";
 
-let scoreboard = [
-    {name: "AAA", score: 100},
-    {name: "BBB", score: 120},
-    {name: "CCC", score: 140},
-    {name: "DDD", score: 160},
-    {name: "EEE", score: 180},
-    {name: "FFF", score: 200},
-    {name: "GGG", score: 220},
-    {name: "HHH", score: 240},
-    {name: "III", score: 260},
-    {name: "JJJ", score: 280},
-  ]
+import {db, ScoreEntry, getScoreboard, addNewScore} from "./dbManager";
+
+let scoreboard = await getScoreboard(db);
 
 // let scoreboard = [
-//   {name: "AAA", score: 1},
-//   {name: "BBB", score: 2},
-//   {name: "CCC", score: 3},
-//   {name: "DDD", score: 4},
-//   {name: "EEE", score: 5},
-//   {name: "FFF", score: 6},
-//   {name: "GGG", score: 7},
-//   {name: "HHH", score: 8},
-//   {name: "III", score: 9},
-//   {name: "JJJ", score: 10},
-// ]
+//     {name: "AAA", score: 100},
+//     {name: "BBB", score: 120},
+//     {name: "CCC", score: 140},
+//     {name: "DDD", score: 160},
+//     {name: "EEE", score: 180},
+//     {name: "FFF", score: 200},
+//     {name: "GGG", score: 220},
+//     {name: "HHH", score: 240},
+//     {name: "III", score: 260},
+//     {name: "JJJ", score: 280},
+//   ]
+
 
 const drawPlayerNameInput = (playerScore) => {
   const gameField = document.getElementById("gameField")
@@ -33,6 +25,9 @@ const drawPlayerNameInput = (playerScore) => {
   while (gameField.firstChild) {
     gameField.removeChild(gameField.firstChild);
   }
+
+  const transLayer = document.createElement('div');
+  transLayer.setAttribute('id','transLayer');
 
   const playerNameInputForm = document.createElement('form');
   playerNameInputForm.setAttribute('id','playerNameInputForm');
@@ -46,9 +41,10 @@ const drawPlayerNameInput = (playerScore) => {
   playerNameLabel.textContent = "Enter your name: ";
 
   const playerNameInput = document.createElement("input");
-  playerNameInput.setAttribute("required", "");
   playerNameInput.setAttribute("id", "playerNameInput");
   playerNameInput.setAttribute("name", "playerNameInput");
+  playerNameInput.setAttribute("required", "");
+  playerNameInput.setAttribute("maxlength", "10");
 
   const submitButton = document.createElement("input");
   submitButton.setAttribute("type", "submit");
@@ -63,7 +59,9 @@ const drawPlayerNameInput = (playerScore) => {
   playerNameInputForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    scoreboard.push({name: playerNameInput.value, score: playerScore})
+    // scoreboard.push({name: playerNameInput.value, score: playerScore})
+    let newScore = new ScoreEntry (playerNameInput.value, playerScore);
+    addNewScore(newScore)
     orderScores(scoreboard)
     scoreboard = scoreboard.slice(0, 10);
     clearContent();
@@ -72,12 +70,13 @@ const drawPlayerNameInput = (playerScore) => {
   // let enteredName = prompt("You're a top 10 player! Enter your name:")
   // scoreboard.push({name: enteredName, score: playerScore})
 
-  gameField.appendChild(playerNameInputForm);
-
+  gameField.appendChild(transLayer);
+  transLayer.appendChild(playerNameInputForm);
 }
 
 const orderScores = (scoreboard) => {
-  scoreboard.sort((a, b) => a.score - b.score)
+  scoreboard.sort((a, b) => a.score - b.score);
+  return scoreboard;
 }
 
 const drawScores = (scoreboard) => {
