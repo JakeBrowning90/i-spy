@@ -58,7 +58,7 @@ function checkAnswer(charName, targetSquare) {
       let playerScore = calculateScore()
       //Add player name and score to scoreboard, give prompt ONLY if player score qualifies.
       if (playerScore < scoreboard[9].score) {
-        console.log(scoreboard[9].id)
+        // console.log(scoreboard[9].id)
         drawPlayerNameInput(playerScore);
       } else {
         //trim scoreboard to 10 entries

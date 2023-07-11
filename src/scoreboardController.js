@@ -1,7 +1,7 @@
 import { drawScoreScreen } from "./drawScoreScreen";
 import { clearContent } from "./clearContent";
 
-import {db, ScoreEntry, getScoreboard, addNewScore} from "./dbManager";
+import {db, ScoreEntry, getScoreboard, updateSavedScores} from "./dbManager";
 
 let scoreboard = await getScoreboard(db);
 
@@ -50,7 +50,6 @@ const drawPlayerNameInput = (playerScore) => {
   submitButton.setAttribute("type", "submit");
   submitButton.setAttribute("id", "nameEntrySubmitButton");
 
-
   playerNameInputForm.appendChild(inputDiv)
   inputDiv.appendChild(playerNameLabel)
   inputDiv.appendChild(playerNameInput)
@@ -59,11 +58,15 @@ const drawPlayerNameInput = (playerScore) => {
   playerNameInputForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    // scoreboard.push({name: playerNameInput.value, score: playerScore})
-    let newScore = new ScoreEntry (playerNameInput.value, playerScore);
-    addNewScore(newScore)
-    orderScores(scoreboard)
+    scoreboard.push({name: playerNameInput.value, score: playerScore})
+    // console.log(scoreboard)
+    // let newScore = new ScoreEntry (playerNameInput.value, playerScore);
+    // addNewScore(newScore)
+    scoreboard = orderScores(scoreboard)
     scoreboard = scoreboard.slice(0, 10);
+    //TODO: pass new scoreboard values back to Firestore
+    updateSavedScores(scoreboard)
+    // console.log(scoreboard)
     clearContent();
     drawScoreScreen();
   });

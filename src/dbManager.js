@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDocs, setDoc, addDoc, deleteDoc  } from 'firebase/firestore';
+import { getFirestore, collection, doc, getDocs, setDoc, updateDoc, addDoc, deleteDoc  } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCPFErdLyozVar5KtV7dVLqNlbc24m7ebc",
@@ -18,7 +18,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
 class ScoreEntry {
-    constructor(name, score ) {
+    constructor(name, score) {
         this.name = name;
         this.score = score;
     }
@@ -40,16 +40,22 @@ async function getScoreboard(db) {
     return scoreboardDB;
 }
 
-async function addNewScore(ScoreEntry) {
-    const docRef = await addDoc(collection(db, "scoreboard"), {
-        name: ScoreEntry.name,
-        score: ScoreEntry.score
-      });
-    console.log("Document written with ID: ", docRef.id);
+async function updateSavedScores(scoreboard) {
+
+    for (let i = 0; i < scoreboard.length; i++) {
+        console.log(scoreboard[i].score)
+        const docRef = doc(db, "scoreboard", i.toString())
+        const newData = {
+            name: scoreboard[i].name,
+            score: scoreboard[i].score 
+        }
+        setDoc(docRef, newData);
+    }
+
 }
 
 async function deleteScore(ref) {
     await deleteDoc(doc(db, "scoreboard", ref));
 }
 
-export { db, ScoreEntry, getAnswerKey, getScoreboard, addNewScore };
+export { db, ScoreEntry, getAnswerKey, getScoreboard, updateSavedScores };
