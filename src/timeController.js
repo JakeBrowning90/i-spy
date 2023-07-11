@@ -7,7 +7,7 @@ const markStartTime = () => {
 }
 const markEndTime = () => {
     gameEndTime = new Date();
-    return gameEndTime
+    return gameEndTime;
 }
 
 const calculateScore = () => {

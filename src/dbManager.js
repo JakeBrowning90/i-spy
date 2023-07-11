@@ -28,8 +28,8 @@ async function getAnswerKey(db) {
     const answerKeyCol = collection(db, 'answerKey');
     const answerKeySnapshot = await getDocs(answerKeyCol);
     const answerKeyDB = answerKeySnapshot.docs.map(doc => doc.data());
-
-    return answerKeyDB;
+    const sortedAnswerKey = answerKeyDB.sort((a, b) => a.index - b.index);
+    return sortedAnswerKey;
 }
 
 async function getScoreboard(db) {
@@ -43,7 +43,7 @@ async function getScoreboard(db) {
 async function updateSavedScores(scoreboard) {
 
     for (let i = 0; i < scoreboard.length; i++) {
-        console.log(scoreboard[i].score)
+        //console.log(scoreboard[i].score)
         const docRef = doc(db, "scoreboard", i.toString())
         const newData = {
             name: scoreboard[i].name,

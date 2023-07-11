@@ -37,10 +37,9 @@ function checkAnswer(charName, targetSquare) {
 
   const characterPickerSpace = document.querySelector('#characterPickerSpace');
 
-  console.log("Is " + charName + " at " + targetSquare.id + "?")
+  //console.log("Is " + charName + " at " + targetSquare.id + "?")
   let guess = answerKey.find(({ name }) => name === charName);
   if (guess.coords.includes(targetSquare.id) == true) {
-    console.log("Correct!");
     guess.found = true;
     addCheckmark(targetSquare);
     characterPickerSpace.textContent = "Correct!";
@@ -51,18 +50,20 @@ function checkAnswer(charName, targetSquare) {
       markEndTime();
       // console.log(calculateScore());
 
-      resetFound();
+      // resetFound();
       
       //To-do: check if player score is greater than greatest on scoreboard
       orderScores(scoreboard);
       let playerScore = calculateScore()
       //Add player name and score to scoreboard, give prompt ONLY if player score qualifies.
+      console.log(playerScore)
+      console.log(scoreboard[9].score)
       if (playerScore < scoreboard[9].score) {
         // console.log(scoreboard[9].id)
         drawPlayerNameInput(playerScore);
       } else {
         //trim scoreboard to 10 entries
-        scoreboard = scoreboard.slice(0, 10);
+        // scoreboard = scoreboard.slice(0, 10);
         clearContent();
         drawScoreScreen();
       }

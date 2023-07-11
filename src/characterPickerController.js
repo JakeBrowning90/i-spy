@@ -7,6 +7,7 @@ const drawCharacterPicker = (targetSquare) => {
     characterPicker.setAttribute("id", "characterPicker");
     characterPicker.textContent = "What is this?";
     const dropList = document.createElement('select');
+
     for (let i = 0; i < answerKey.length; i++) {
         let character = answerKey[i];
         if (character.found == false) {
