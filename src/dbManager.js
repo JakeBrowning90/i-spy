@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDocs, setDoc, updateDoc, addDoc, deleteDoc  } from 'firebase/firestore';
+import { getFirestore, collection, doc, getDocs, setDoc  } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCPFErdLyozVar5KtV7dVLqNlbc24m7ebc",
@@ -36,14 +36,12 @@ async function getScoreboard(db) {
     const scoreboardCol = collection(db, 'scoreboard');
     const scoreboardSnapshot = await getDocs(scoreboardCol);
     const scoreboardDB = scoreboardSnapshot.docs.map(doc => doc.data());
-
     return scoreboardDB;
 }
 
 async function updateSavedScores(scoreboard) {
-
+    //Update the 10 db docs with current scoreboard values
     for (let i = 0; i < scoreboard.length; i++) {
-        //console.log(scoreboard[i].score)
         const docRef = doc(db, "scoreboard", i.toString())
         const newData = {
             name: scoreboard[i].name,
@@ -51,11 +49,6 @@ async function updateSavedScores(scoreboard) {
         }
         setDoc(docRef, newData);
     }
-
-}
-
-async function deleteScore(ref) {
-    await deleteDoc(doc(db, "scoreboard", ref));
 }
 
 export { db, ScoreEntry, getAnswerKey, getScoreboard, updateSavedScores };

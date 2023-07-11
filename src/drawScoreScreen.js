@@ -28,7 +28,6 @@ const drawScoreScreen = () => {
 
     content.appendChild(scoreScreenBackground);
     scoreScreenBackground.appendChild(scoreScreenContent);
-    // scoreScreenContent.appendChild(scoreTitleDiv);
     scoreScreenContent.appendChild(scoreDisplayDiv);
     scoreDisplayDiv.appendChild(scoreTitleDiv);
 

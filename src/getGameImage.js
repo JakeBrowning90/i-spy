@@ -2,15 +2,12 @@ import { gameStartTime, markStartTime } from "./timeController";
 import { drawCharacterPicker, removeCharacterPicker } from "./characterPickerController";
 import { addMarker, removeMarker } from "./tileMarkerController";
 import { resetFound } from "./checkAnswer";
-// import iSpyLevers from './img/iSpyLevers.jpeg';
 
 const getGameImage = () => {
     resetFound();
     //Begin tracking time on image load
     markStartTime();
     console.log(gameStartTime)
-
-    const gameScreenDiv = document.querySelector('#gameScreenDiv');
 
     const gameField = document.querySelector('#gameField');
     
