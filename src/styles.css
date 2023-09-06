@@ -13,6 +13,10 @@ button {
     height: 40%;
 }
 
+a, a::after {
+    color: white;
+}
+
 h1 {
     font-size: 7em;
     color: rgb(232, 232, 232);
@@ -45,7 +49,7 @@ li {
     display: flex;
     flex-direction: column;
     justify-items: center;
-    padding-left: 10px;
+    padding: 10px;
 }
 
 #content {
